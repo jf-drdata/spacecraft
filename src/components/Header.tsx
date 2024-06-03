@@ -3,11 +3,9 @@ import { Card } from 'react-native-paper';
 
 export default function Header({ title }: { title: string }) {
   return (
-    <Card>
-      <Text style={styles.title}>
-        {title}
-      </Text>
-    </Card>
+    <Text style={styles.title}>
+      {title}
+    </Text>
   );
 }
 

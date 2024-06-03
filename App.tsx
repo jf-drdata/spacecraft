@@ -2,9 +2,11 @@
 import React from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
 
-import LoginScreen from './src/screens/LoginScreen';
 import Header from './src/components/Header';
-import { TermsScreen } from "./src/screens/TermsScreen";
+
+import LoginScreen from './src/screens/LoginScreen';
+// import { TermsScreen } from "./src/screens/TermsScreen";
+import { StarshipFeedScreen } from "./src/screens/StarshipFeedScreen";
 
 function App() {
   return (
@@ -12,7 +14,11 @@ function App() {
       <Header title="SpaceCraft" />
 
       {/* <LoginScreen /> */}
-      <TermsScreen />
+      {/* <TermsScreen /> */}
+
+      <StarshipFeedScreen />
+
+
     </PaperProvider>
   );
 };
