@@ -2,13 +2,12 @@ import React from "react";
 import { StatusBar, StyleSheet, FlatList, View, Text, Image, ScrollView } from "react-native";
 
 import { Card, Button } from 'react-native-paper';
-
-import { default as data } from "../../api/data.json";
+import { useStarships } from "../hooks/useStarShips";
+import { Offline } from "./Offline";
 
 type ItemProps = {
   item: {
     name: string;
-    manufacturer: string;
   };
 };
 
@@ -20,7 +19,6 @@ const Item = ({ item }: ItemProps) => {
 
       <Card.Content>
         <Text>{item.name}</Text>
-        <Text>{item.manufacturer}</Text>
       </Card.Content>
 
       <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
@@ -35,16 +33,20 @@ const Item = ({ item }: ItemProps) => {
 
 
 export const StarshipFeedScreen = () => {
+  const { isPending, data } = useStarships();
+
+  if (isPending) return <View><Text>Loading...</Text></View>
+
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.headerContainer}>
         <FlatList
           data={data.results}
           renderItem={({ item }) => <Item item={item} />}
-          keyExtractor={item => item.created}
+          keyExtractor={item => item.name}
         />
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
