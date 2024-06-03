@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react-native/no-color-literals */
 import { StyleSheet, Text, View } from "react-native";
 
 export const Offline = () => {
@@ -7,7 +7,7 @@ export const Offline = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.message}>
-        I'm offline
+        I‘m offline
         {/* Check `isConnected` status and render a message with `ActivityIndicator` */}
       </Text>
     </View>
@@ -17,7 +17,7 @@ export const Offline = () => {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    backgroundColor: "#FEE2E2",
+    backgroundColor: "#fee2e2",
     borderRadius: 10,
     flexDirection: "row",
     justifyContent: "space-between",

@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/no-unescaped-entities */
 import { Alert, Image, ScrollView, View } from "react-native";
 import { Appbar, Text } from "react-native-paper";
 

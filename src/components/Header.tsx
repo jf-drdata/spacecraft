@@ -1,25 +1,17 @@
-import { StyleSheet, Text } from 'react-native';
+/* eslint-disable react-native/no-color-literals */
+import { StyleSheet, Text } from "react-native";
 
 export default function Header({ title }: { title: string }) {
-  return (
-    <Text style={styles.title}>
-      {title}
-    </Text>
-  );
+  return <Text style={styles.title}>{title}</Text>;
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-  },
   title: {
-    backgroundColor: '#7250E9',
+    backgroundColor: "#7250E9",
+    color: "#ffffff",
     fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
     padding: 100,
-    color: '#ffffff',
+    textAlign: "center",
   },
 });

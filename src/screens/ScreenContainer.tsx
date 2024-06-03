@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
-import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
-import { useIsConnected } from 'react-native-offline';
+import { useIsConnected } from "react-native-offline";
 
 import { Offline } from "./Offline";
+
 import Header from "~/components/Header";
 
 interface ScreenContainerProps {
@@ -47,9 +47,5 @@ const styles = StyleSheet.create({
   },
   footer: {
     paddingBottom: 256,
-  },
-  headerText: {
-    fontWeight: "bold",
-    marginBottom: 20,
   },
 });

@@ -1,7 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { TextInput, Button, Checkbox } from 'react-native-paper';
+/* eslint-disable react-native/no-color-literals */
+import { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { Button, Checkbox, TextInput } from "react-native-paper";
+import { StatusBar } from "expo-status-bar";
 
 export default function LoginScreen() {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -10,15 +11,24 @@ export default function LoginScreen() {
     <View style={styles.container}>
       <StatusBar style="auto" />
 
-      <TextInput label="Email" style={styles.input} />
+      <TextInput
+        label="Email"
+        style={styles.input}
+      />
 
-      <TextInput label="Password" style={styles.input} secureTextEntry={isPasswordShow} />
+      <TextInput
+        label="Password"
+        style={styles.input}
+        secureTextEntry={isPasswordShow}
+      />
 
-      <Checkbox.Item status="unchecked" label="Show Password" onPress={() => setIsPasswordShow(!isPasswordShow)} />
+      <Checkbox.Item
+        status="unchecked"
+        label="Show Password"
+        onPress={() => setIsPasswordShow(!isPasswordShow)}
+      />
 
-      <Button onPress={() => console.log('Pressed')}>
-        Login
-      </Button>
+      <Button onPress={() => console.log("Pressed")}>Login</Button>
 
       <Text>Read Terms and conditions</Text>
     </View>
@@ -27,11 +37,11 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: "center",
+    backgroundColor: "#fff",
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
   },
   input: {
     width: 300,
-  }
+  },
 });

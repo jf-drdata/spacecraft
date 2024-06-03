@@ -1,7 +1,6 @@
-import React from "react";
-import { StatusBar, StyleSheet, FlatList, View, Text } from "react-native";
+import { FlatList, StatusBar, StyleSheet, Text, View } from "react-native";
+import { Button, Card } from "react-native-paper";
 
-import { Card, Button } from 'react-native-paper';
 import { useStarships } from "../hooks/useStarShips";
 
 type ItemProps = {
@@ -11,7 +10,6 @@ type ItemProps = {
 };
 
 const Item = ({ item }: ItemProps) => {
-
   return (
     <Card style={styles.cardContainer}>
       <Card.Title title={item.name} />
@@ -20,21 +18,25 @@ const Item = ({ item }: ItemProps) => {
         <Text>{item.name}</Text>
       </Card.Content>
 
-      <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+      <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
 
       <Card.Actions>
         <Button>Cancel</Button>
         <Button>Ok</Button>
       </Card.Actions>
     </Card>
-  )
+  );
 };
-
 
 export const StarshipFeedScreen = () => {
   const { isPending, data } = useStarships();
 
-  if (isPending) return <View><Text>Loading...</Text></View>
+  if (isPending)
+    return (
+      <View>
+        <Text>Loading...</Text>
+      </View>
+    );
 
   return (
     <View style={styles.container}>
@@ -42,7 +44,7 @@ export const StarshipFeedScreen = () => {
         <FlatList
           data={data.results}
           renderItem={({ item }) => <Item item={item} />}
-          keyExtractor={item => item.name}
+          keyExtractor={(item) => item.name}
         />
       </View>
     </View>
@@ -50,6 +52,9 @@ export const StarshipFeedScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  cardContainer: {
+    marginBottom: 20,
+  },
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0, // only for Android to avoid status bar overlap
@@ -58,7 +63,4 @@ const styles = StyleSheet.create({
     marginTop: 20,
     paddingHorizontal: 20,
   },
-  cardContainer: {
-    marginBottom: 20
-  }
 });
