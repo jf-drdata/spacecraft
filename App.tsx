@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// App.tsx
+import React from 'react';
+import { Provider as PaperProvider } from 'react-native-paper';
 
-export default function App() {
+import LoginScreen from './src/screens/LoginScreen';
+import Header from './src/components/Header';
+import { TermsScreen } from "./src/screens/TermsScreen";
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <PaperProvider>
+      <Header title="SpaceCraft" />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+      {/* <LoginScreen /> */}
+      <TermsScreen />
+    </PaperProvider>
+  );
+};
+
+// eslint-disable-next-line import/no-default-export
+export default App;
