@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
-import { Text } from "react-native-paper";
 import { useIsConnected } from 'react-native-offline';
 
 import { Offline } from "./Offline";
@@ -11,14 +10,12 @@ interface ScreenContainerProps {
   title: string;
   children?: ReactNode;
   withSeparatorFooter?: boolean;
-  scrollable?: boolean;
 }
 
 export const ScreenContainer = ({
   title,
   children,
   withSeparatorFooter = false,
-  scrollable = false,
 }: ScreenContainerProps) => {
   const isConnected = useIsConnected();
 
@@ -31,7 +28,7 @@ export const ScreenContainer = ({
         <Offline />
       ) : (
         <>
-          <Header title="SpaceCraft" />
+          <Header title={title} />
 
           {children}
         </>

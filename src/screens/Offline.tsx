@@ -1,15 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { ActivityIndicator } from "react-native-paper";
-import { useIsConnected } from 'react-native-offline';
 
 export const Offline = () => {
   // Add `useIsConnected()` hook
-  const isConnected = useIsConnected();
 
   return (
-    <View>
-      <Text>
+    <View style={styles.container}>
+      <Text style={styles.message}>
         I'm offline
         {/* Check `isConnected` status and render a message with `ActivityIndicator` */}
       </Text>

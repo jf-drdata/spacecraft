@@ -1,9 +1,8 @@
 import React from "react";
-import { StatusBar, StyleSheet, FlatList, View, Text, Image, ScrollView } from "react-native";
+import { StatusBar, StyleSheet, FlatList, View, Text } from "react-native";
 
 import { Card, Button } from 'react-native-paper';
 import { useStarships } from "../hooks/useStarShips";
-import { Offline } from "./Offline";
 
 type ItemProps = {
   item: {

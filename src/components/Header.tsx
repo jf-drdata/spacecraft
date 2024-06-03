@@ -1,5 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { Card } from 'react-native-paper';
+import { StyleSheet, Text } from 'react-native';
 
 export default function Header({ title }: { title: string }) {
   return (
