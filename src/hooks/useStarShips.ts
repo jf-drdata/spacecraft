@@ -2,7 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 
 async function fetchStarshipsData() {
   try {
-    const response = await fetch(process.env.EXPO_PUBLIC_API_URL);
+    const response = await fetch(
+      `${process.env.EXPO_PUBLIC_API_URL}/api/starships/`,
+    );
     const json = await response.json();
     return json;
   } catch (error) {

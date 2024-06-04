@@ -24,7 +24,7 @@ module.exports = {
         foregroundImage: "./assets/adaptive-icon.png",
         backgroundColor: "#ffffff",
       },
-      package: "com.test.spacecraft"
+      package: "com.test.spacecraft",
     },
     web: {
       favicon: "./assets/favicon.png",

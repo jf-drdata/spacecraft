@@ -1,13 +1,11 @@
 /* eslint-disable react-native/no-color-literals */
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
-import { Button } from "react-native-paper";
+import { Image, StyleSheet, View } from "react-native";
+import { Button, Text } from "react-native-paper";
 
 import AuthContext from "~/context/AuthContext";
 
-type Props = {};
-
-const AuthScreen = (props: Props) => {
+const AuthScreen = () => {
   const { signIn } = React.useContext(AuthContext);
 
   return (

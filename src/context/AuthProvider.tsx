@@ -1,8 +1,8 @@
-import { useMemo, useState } from "react";
+import { ReactNode, useMemo, useState } from "react";
 
 import AuthContext from "./AuthContext";
 
-const AuthProvider = ({ children }) => {
+const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState(false);
 
   const signIn = () => {

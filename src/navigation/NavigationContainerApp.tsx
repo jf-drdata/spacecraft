@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -7,9 +6,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AuthContext from "~/context/AuthContext";
 import AuthNavigator from "~/navigation/AuthNavigator";
 import Navigator from "~/navigation/Navigator";
-type Props = {};
 
-const NavigationContainerApp = (props: Props) => {
+const NavigationContainerApp = () => {
   const Stack = createNativeStackNavigator();
   const { user } = React.useContext(AuthContext);
 
@@ -35,5 +33,3 @@ const NavigationContainerApp = (props: Props) => {
 };
 
 export default NavigationContainerApp;
-
-const styles = StyleSheet.create({});
