@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AuthContext from "~/context/AuthContext";
+
 import { MyTabs } from "~/components/MyTabs";
+import AuthContext from "~/context/AuthContext";
 import AuthNavigator from "~/navigation/AuthNavigator";
 import Navigator from "~/navigation/Navigator";
 type Props = {};
@@ -14,7 +15,7 @@ const NavigationContainerApp = (props: Props) => {
 
   return (
     <NavigationContainer>
-      {/* <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         {user ? (
           <Stack.Screen
             name={"STARSHIPS_STACK"}
@@ -26,9 +27,9 @@ const NavigationContainerApp = (props: Props) => {
             component={AuthNavigator}
           />
         )}
-      </Stack.Navigator> */}
+      </Stack.Navigator>
 
-      <MyTabs />
+      {/* <MyTabs /> */}
     </NavigationContainer>
   );
 };
