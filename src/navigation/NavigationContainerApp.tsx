@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { MyTabs } from "~/components/MyTabs";
+// import { MyTabs } from "~/components/MyTabs";
 import AuthContext from "~/context/AuthContext";
 import AuthNavigator from "~/navigation/AuthNavigator";
 import Navigator from "~/navigation/Navigator";

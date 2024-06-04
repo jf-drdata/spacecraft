@@ -1,11 +1,9 @@
 module.exports = {
   extra: {
     storybookEnabled: process.env.STORYBOOK_ENABLED,
-    eas: {
-      projectId: "8787d4b7-2699-447c-b073-4b190ed51e0b",
-    },
   },
   expo: {
+    owner: "jfswain",
     name: "spacecraft",
     slug: "spacecraft",
     version: "1.0.0",
@@ -19,15 +17,22 @@ module.exports = {
     },
     ios: {
       supportsTablet: true,
+      bundleIdentifier: "com.test.spacecraft",
     },
     android: {
       adaptiveIcon: {
         foregroundImage: "./assets/adaptive-icon.png",
         backgroundColor: "#ffffff",
       },
+      package: "com.test.spacecraft"
     },
     web: {
       favicon: "./assets/favicon.png",
+    },
+    extra: {
+      eas: {
+        projectId: "8787d4b7-2699-447c-b073-4b190ed51e0b",
+      },
     },
   },
 };
