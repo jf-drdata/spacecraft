@@ -1,6 +1,9 @@
 module.exports = {
   extra: {
     storybookEnabled: process.env.STORYBOOK_ENABLED,
+    eas: {
+      projectId: "8787d4b7-2699-447c-b073-4b190ed51e0b",
+    },
   },
   expo: {
     name: "spacecraft",

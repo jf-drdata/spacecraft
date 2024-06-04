@@ -1,15 +1,18 @@
+import { useState } from "react";
 import { FlatList, StatusBar, StyleSheet, Text, View } from "react-native";
 import { Button, Card } from "react-native-paper";
 
 import { useStarships } from "../hooks/useStarShips";
+import { Routes } from "~/navigation/Routes";
 
 type ItemProps = {
   item: {
     name: string;
   };
+  onPress: () => void;
 };
 
-const Item = ({ item }: ItemProps) => {
+const Item = ({ item, onPress }: ItemProps) => {
   return (
     <Card style={styles.cardContainer}>
       <Card.Title title={item.name} />
@@ -22,14 +25,18 @@ const Item = ({ item }: ItemProps) => {
 
       <Card.Actions>
         <Button>Cancel</Button>
-        <Button>Ok</Button>
+        <Button onPress={onPress}>Ok</Button>
       </Card.Actions>
     </Card>
   );
 };
 
-export const StarshipFeedScreen = () => {
+export const StarshipFeedScreen = ({ navigation: { navigate }}) => {
   const { isPending, data } = useStarships();
+
+  const handlePress = (item) => {
+    navigate(Routes.STARSHIP_DETAIL_SCREEN, { item })
+  }
 
   if (isPending)
     return (
@@ -43,7 +50,12 @@ export const StarshipFeedScreen = () => {
       <View style={styles.headerContainer}>
         <FlatList
           data={data.results}
-          renderItem={({ item }) => <Item item={item} />}
+          renderItem={({ item }) => (
+            <Item
+              item={item}
+              onPress={() => handlePress(item)}
+            />
+          )}
           keyExtractor={(item) => item.name}
         />
       </View>

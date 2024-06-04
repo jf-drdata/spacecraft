@@ -1,11 +1,17 @@
 /* eslint-disable react-native/no-color-literals */
 import { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Button, Checkbox, TextInput } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
 
-export default function LoginScreen() {
+import { Routes } from "~/navigation/Routes";
+
+export default function LoginScreen({ navigation }) {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
+
+  const navigateToTerms = () => {
+    navigation.navigate(Routes.TERMS_SCREEN);
+  };
 
   return (
     <View style={styles.container}>
@@ -30,7 +36,9 @@ export default function LoginScreen() {
 
       <Button onPress={() => console.log("Pressed")}>Login</Button>
 
-      <Text>Read Terms and conditions</Text>
+      <TouchableOpacity onPress={navigateToTerms}>
+        <Text>Read Terms and conditions</Text>
+      </TouchableOpacity>
     </View>
   );
 }

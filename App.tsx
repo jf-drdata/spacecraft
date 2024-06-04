@@ -1,30 +1,45 @@
 // App.tsx
+import React, { useMemo, useState } from "react";
 import { NetworkProvider } from "react-native-offline";
 import { Provider as PaperProvider } from "react-native-paper";
+import { Button } from "react-native-paper";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Constants from "expo-constants";
 
 // import { TermsScreen } from "./src/screens/TermsScreen";
 import { StarshipFeedScreen } from "./src/screens/StarshipFeedScreen";
 
+
 import { ScreenContainer } from "~/screens/ScreenContainer";
 
 const queryClient = new QueryClient();
 
+import AuthContext from "~/context/AuthContext";
+
+import NavigationContainerApp from "~/navigation/NavigationContainerApp";
+
+import AuthProvider from "~/context/AuthProvider";
+import { MyTabs } from "~/components/MyTabs";
+
 function App() {
   return (
-    <NetworkProvider>
-      <QueryClientProvider client={queryClient}>
-        <PaperProvider>
-          <ScreenContainer title="SpaceCraft">
+    <AuthProvider>
+      <NetworkProvider>
+        <QueryClientProvider client={queryClient}>
+          <PaperProvider>
+            <NavigationContainerApp />
+
+            {/* <ScreenContainer title="SpaceCraft"> */}
             {/* <LoginScreen /> */}
             {/* <TermsScreen /> */}
 
-            <StarshipFeedScreen />
-          </ScreenContainer>
-        </PaperProvider>
-      </QueryClientProvider>
-    </NetworkProvider>
+            {/* <StarshipFeedScreen /> */}
+            {/* </ScreenContainer> */}
+          </PaperProvider>
+        </QueryClientProvider>
+      </NetworkProvider>
+    </AuthProvider>
   );
 }
 
